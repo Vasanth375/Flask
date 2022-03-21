@@ -7,6 +7,11 @@ app=Flask(__name__)
 
 # this is the dynamic html example
 # whatever the hold variable you search on search bar that will display on the page
+
+@app.route('/')
+def hello_flask():
+    return "<h1>hello flask</h1>"
+
 @app.route('/<hold>')
 def hello(hold):
     return render_template('home.html', hold=hold)
